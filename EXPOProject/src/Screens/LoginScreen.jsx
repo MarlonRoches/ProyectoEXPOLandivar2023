@@ -2,19 +2,19 @@ import { StyleSheet, Text, View , SafeAreaView, Image, TextInput, Butrton,
     TouchableOpacity } from 'react-native';
 
 
-function loginScreen(params) {
+function loginScreen({setIsLogged}) {
     return(<SafeAreaView style= {styles.container}>
         <Image style={styles.logoLogin} source={require("../Images/Logo.png")}/>    
         {/* <Image style={styles.logoLogin} source={require("../Images/WatchPoint.png")}/>     */}
         <TextInput style={styles.textImput} placeholder='usuario'/>
         <TextInput  style={styles.textImput} placeholder='password'/>
-        <PrimaryButton displayText={"Primario"}/>
+        <PrimaryButton displayText={"Primario"} setIsLogged = {setIsLogged}/>
         <SecondaryButton displayText={"Secundario"}/>
 
-        <Text></Text>
+        <Text> placeholder text<Text>xd </Text></Text>
     </SafeAreaView>)
 }
-function PrimaryButton({displayText}) {
+function PrimaryButton({displayText, setIsLogged}) {
 
     const buttonStyle= StyleSheet.create({
         buttonContainer: {
@@ -42,7 +42,7 @@ function PrimaryButton({displayText}) {
       });
     return (<>
 
-    <TouchableOpacity  style={buttonStyle.buttonContainer}>
+    <TouchableOpacity  style={buttonStyle.buttonContainer} onPress= {()=>setIsLogged(false)}>
         <View style={buttonStyle.buttonBody}>
             <Text style={buttonStyle.buttonText}> {displayText}</Text>
         </View>
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
       width:"80%",
       height:"5%",
       fontSize: 10,
-      backgroundColor:"grey"
+      backgroundColor:"#E2E6E0"
     }
   });
   

@@ -1,11 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, Text, View , SafeAreaView, Image} from 'react-native';
+import HomeStack from './src/routes/homeStack';
 import LoginScreen from './src/Screens/LoginScreen';
 export default function App() {
+  const [IsLogged, setIsLogged] = useState(true)
   return (
-  
     <>
-    <LoginScreen/>
+    {IsLogged ? <LoginScreen setIsLogged = {setIsLogged}/> : <HomeStack/>}
+    
     </>
   
   // <SafeAreaView style={styles.container}>

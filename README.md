@@ -1,1 +1,0 @@
-# ProyectoEXPOLandivar2023
